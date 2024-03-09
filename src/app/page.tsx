@@ -1,9 +1,10 @@
-import SideBar from "@/sections/sideBar/SideBar";
+import Sidebar from "../components/sidebar/Sidebar";
+
 
 export default function Main() {
     return (
         <>
-            <SideBar/>
+            
         </>
     )
 }

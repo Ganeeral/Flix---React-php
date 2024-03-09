@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
+import SideBar from "@/components/sidebar/Sidebar";
+import SearchBar from "@/components/searchbar/search";
 
-const inter = Inter({ subsets: ["latin"] });
+// const roboto = Roboto({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ru">
+      <body className="bg-white">
+        <div className="flex h-full w-full">
+          <SideBar />
+          <div id="page">
+            <SearchBar/> {children}</div>
+        </div>
+      </body>
     </html>
   );
 }
