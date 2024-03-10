@@ -1,31 +1,46 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Search } from 'lucide-react'; // Импортируем иконку поиска
-
-const SearchBar: React.FC = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
-
+import React, { useState } from "react";
+import { Search } from "lucide-react";
+import SearchIcon from "@/ui/icons/SearchIcon.svg";
+import { words } from "../lib/data";
+const SearchBar = () => {
+  const [activeSearch, setActiveSearch] = useState([])
+  const handleSearch = (e) => {
+    if(e.target.value == ''){
+      setActiveSearch([])
+      return false
+    }
+    setActiveSearch (words.filter(w=> w.includes(e.target.value)).slice(0,8))
+  }
   return (
-    <div className="relative">
-      {/* Иконка поиска */}
-      <button onClick={toggleSearch} className="absolute top-0 right-0 p-2">
-        <Search className="h-6 w-6 text-gray-500" />
-      </button>
-
-      {/* Поле ввода поиска (появляется при открытии поиска) */}
-      {isSearchOpen && (
+    <form className="w-[500px] relative">
+      <div className="relative">
         <input
-          type="text"
-          placeholder="Search..."
-          className="pl-10 pr-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500"
+          type="search"
+          placeholder="Поиск.."
+          className="w-full p-4 rounded-[30px] bg-slate-800"
+          onChange={(e) => handleSearch(e)}
         />
-      )}
-    </div>
+        <button className="absolute right-1 top-1/2 -translate-y-1/2 p-4 bg-slate-900 rounded-full">
+          <SearchIcon />
+        </button>
+      </div>
+
+      {
+        activeSearch.length > 0 &&(
+      <div className="absolute top-20 p-4 bg-slate-800 text-white w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
+        {
+          activeSearch.map(s => (
+            <span>{s}</span>
+          ))
+        }
+      </div>
+
+        )
+      }
+
+    </form>
   );
 };
 

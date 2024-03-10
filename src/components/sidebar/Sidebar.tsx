@@ -86,7 +86,6 @@ export default function Home() {
   const controlText = useAnimation();
   const controlTextUp = useAnimation();
   const controlTitleText = useAnimation();
-  const router = useRouter();
   const pathname = usePathname();
 
   const showMore = () => {
