@@ -3,7 +3,8 @@ export const screens = {
     laptop: '1536px',
     tablet: '1100px',
     'tablet-s': '769px',
-    mobile: '577px'
+    mobile: '577px',
+    flix: '651px'
 }
 
 export const indents = {
@@ -27,6 +28,7 @@ export const indents = {
 }
 
 export const colors = {
+    searchText: '#303030',
     sideText: '#969696',
     'black-background': '#1C1D20',
     white: '#FFFFFF',

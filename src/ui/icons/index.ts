@@ -13,7 +13,9 @@ import SubIcon from "@/ui/icons/SubIcon.svg";
 import VideoIcon from "@/ui/icons/VideoIcon.svg";
 import LogoIcon from "@/ui/icons/logoIcon.svg";
 import ChevronRight from "@/ui/icons/chevronRight.svg";
-import RingG from "@/ui/icons/ringG.svg"
+import RingG from "@/ui/icons/ringG.svg";
+import RingGMobile from "@/ui/icons/ringGMobile.svg";
+import BurgerIconMobile from "@/ui/icons/BurgerIconMobile.svg";
 
 export {
   BurgerIcon,
@@ -32,4 +34,6 @@ export {
   LogoIcon,
   ChevronRight,
   RingG,
+  RingGMobile,
+  BurgerIconMobile,
 };

@@ -12,7 +12,14 @@ html {
   min-width: 320px;
 }
 
-#page{
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+#page {
   flex-grow: 1;
 }
 
@@ -38,19 +45,19 @@ body {
   background: linear-gradient(270.00deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.05) 50.403%, rgba(255, 255, 255, 0) 96.774%);
 }
 
-.ringIcon{
+.ringIcon {
   opacity: 0;
   position: absolute;
-  left:-7px;
+  left: -7px;
   top: -8px;
 }
 
-.sideBar__item:hover .ringIcon{
+.sideBar__item:hover .ringIcon {
   opacity: 1;
   transition: .5s
 }
 
-.sideBar__item:hover .icon path{
+.sideBar__item:hover .icon path {
   fill: #ffffff;
   transition: .3s
 }
@@ -61,13 +68,28 @@ body {
 }
 
 .sideBar__item.active .ringIcon {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .sideBar__item.active .icon path {
-  fill: white; 
+  fill: white;
 }
 
 .sideBar__item.active .sideBar__text {
-  color: white; 
+  color: white;
+}
+
+.input__container {
+  background:
+    linear-gradient(#ffffff 0 0) padding-box,
+    linear-gradient(to right, rgb(231, 62, 110), rgb(119, 41, 117)) border-box;
+  color: #313149;
+  border: 2px solid transparent;
+  border-radius: 12px;
+}
+
+@media (min-width: 577px) {
+  .input__container{
+    border-radius: 30px;
+  }
 }

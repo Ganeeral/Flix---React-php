@@ -3,7 +3,7 @@ import {colors, typography, indents, radii, screens} from "./design-system";
 
 const config: Config = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx,scss}'
+    './src/**/*.{js,ts,jsx,tsx,mdx,css}'
   ],
   theme: {
     extend: {

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SideBar from "@/components/sidebar/Sidebar";
-import SearchBar from "@/components/searchbar/search";
+import Header from "@/components/header/header";
+import SideBarMobile from "@/components/sidebar/sidebarMobile";
 
 export const metadata: Metadata = {
   title: "Видеохостинг - Flix",
@@ -18,8 +19,9 @@ export default function RootLayout({
       <body className="bg-white">
         <div className="flex h-full w-full">
           <SideBar />
+          <SideBarMobile/>
           <div id="page">
-            <SearchBar /> 
+            <Header />
             {children}
           </div>
         </div>
